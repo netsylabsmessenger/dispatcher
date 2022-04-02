@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package net.syslabs.messenger.dispatcher.exception;
+package net.sylabs.messenger.dispatcher.handler;
 
-public class DispatcherException extends Exception {
-    public DispatcherException(String message) {
-        super(message);
-    }
+import net.sylabs.messenger.dispatcher.DispatcherInterface;
+import net.sylabs.messenger.dispatcher.handler.exception.HandlerException;
+import net.sylabs.messenger.message.MessageInterface;
 
-    public DispatcherException(String message, Throwable cause) {
-        super(message, cause);
-    }
+public interface HandlerInterface {
+    boolean supports(MessageInterface message);
+
+    void handle(MessageInterface message, DispatcherInterface dispatcher) throws HandlerException;
 }

@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package net.syslabs.messenger.dispatcher;
+package net.sylabs.messenger.dispatcher;
 
-import net.syslabs.messenger.dispatcher.exception.DispatcherException;
-import net.syslabs.messenger.dispatcher.handler.HandlerInterface;
+import net.sylabs.messenger.dispatcher.exception.DispatcherException;
+import net.sylabs.messenger.dispatcher.handler.HandlerInterface;
 import net.sylabs.messenger.message.MessageInterface;
 
 import java.util.List;
