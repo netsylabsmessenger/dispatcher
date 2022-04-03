@@ -18,13 +18,22 @@
 package net.sylabs.messenger.dispatcher.handler.exception;
 
 import net.sylabs.messenger.dispatcher.exception.DispatcherException;
+import net.sylabs.messenger.message.MessageInterface;
 
 public class HandlerException extends DispatcherException {
-    public HandlerException(String message) {
+    private final MessageInterface unhandledMessage;
+
+    public HandlerException(String message, MessageInterface unhandledMessage) {
         super(message);
+        this.unhandledMessage = unhandledMessage;
     }
 
-    public HandlerException(String message, Throwable cause) {
+    public HandlerException(String message, MessageInterface unhandledMessage, Throwable cause) {
         super(message, cause);
+        this.unhandledMessage = unhandledMessage;
+    }
+
+    public MessageInterface getUnhandledMessage() {
+        return unhandledMessage;
     }
 }
